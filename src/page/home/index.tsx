@@ -1,10 +1,9 @@
-'use client'
 import React, { useState } from 'react'
-import categories from '../src/const/categories'
-import authors from '../src/const/authors'
-import templates from '../src/const/templates'
-import Category from '../src/components/Category'
-import Author from '../src/components/Author'
+import categories from 'src/const/categories'
+import authors from 'src/const/authors'
+import templates from 'src/const/templates'
+import Category from 'src/components/Category'
+import Author from 'src/components/Author'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('category')
