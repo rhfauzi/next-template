@@ -16,6 +16,85 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: #1e232b !important;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+header.dark {
+  background-color: #262c37 !important;
+  color: #ffffff;
+}
+
+header.dark nav {
+  width: 80%;
+  margin: 0 auto;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+header.dark nav,
+header.dark nav a,
+header.dark nav button {
+  color: #e5e5e5;
+  /* font-family: Montserrat; */
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.slider {
+  min-height: 300px;
+  background-color: red;
+}
+
+.container {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.product h2 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.header-page {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-page .button-box {
+  display: flex;
+  gap: 20px;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-box .line {
+  display: flex;
+  background: #e74c3c;
+  height: 6px;
+  width: 112px;
+  margin-bottom: 10px;
+}
+
+button {
+  height: 32px;
+  border-radius: 32px !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.product-single {
+  position: relative;
+}
+
+.rating {
+  position: absolute;
+  padding: 0px 5px;
+  right: 0px;
 }

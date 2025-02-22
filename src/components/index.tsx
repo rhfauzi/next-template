@@ -1,0 +1,5 @@
+export { default as Content } from './Content'
+export { default as Header } from './Header'
+export { default as Loader } from './Loader'
+export { default as ProductList } from './ProductList'
+export { default as Slider } from './Slider'
