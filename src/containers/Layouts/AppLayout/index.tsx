@@ -1,9 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Loader from 'src/components/Loader'
-import Header from '@/components/Header'
-import Content from '@/components/Content'
+import { Loader, Header, Content, Footer } from '@/components'
 
 export default function AppLayout({ children }) {
   const router = useRouter
@@ -55,6 +53,8 @@ export default function AppLayout({ children }) {
           <Header />
 
           {children}
+
+          <Footer />
         </div>
       )}
     </React.Fragment>
