@@ -1,19 +1,22 @@
 import { DispatchType } from './reducer'
-import { AppState } from './state'
+import { StateType } from './state'
 
-export function appHandler(
-  state: AppState,
-  dispatch: React.Dispatch<DispatchType<keyof AppState>>,
-) {
-  function handleIsRequestPrev(payload: boolean): void {
-    dispatch({ type: 'isRequestPrevious', payload })
-  }
-  function handleTableLog(payload: AppState['table_log']) {
-    dispatch({ type: 'table_log', payload })
-  }
-  function handleReadyFor(payload: AppState['readyFor']) {
-    dispatch({ type: 'readyFor', payload })
+export function baseHandler(state: StateType, dispatch: React.Dispatch<DispatchType>) {
+  function runProcess(payload: string) {
+    dispatch({ type: 'processing', payload })
   }
 
-  return { handleIsRequestPrev, handleTableLog, handleReadyFor }
+  function stopProcess() {
+    dispatch({ type: 'processing', payload: undefined })
+  }
+
+  function handleConfirm(payload: string) {
+    dispatch({ type: 'confirm', payload })
+  }
+
+  return {
+    runProcess,
+    stopProcess,
+    handleConfirm,
+  }
 }

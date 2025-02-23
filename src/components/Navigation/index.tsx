@@ -59,7 +59,7 @@ const callsToAction = [
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
 ]
 
-export default function Example() {
+export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const [list, setList] = useState(products)
@@ -93,10 +93,10 @@ export default function Example() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <a href="#" className="text-sm/6 font-semibold text-gray-900">
+            <a href="categories" className="text-sm/6 font-semibold text-gray-900">
               Categories
             </a>
-            <a href="#" className="text-sm/6 font-semibold text-gray-900">
+            <a href="home" className="text-sm/6 font-semibold text-gray-900">
               Movies
             </a>
             <a href="#" className="text-sm/6 font-semibold text-gray-900">

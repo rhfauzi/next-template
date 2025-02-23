@@ -1,17 +1,11 @@
-import { AppState } from './state'
+import { StateType } from './state'
 
-type StateKeys = keyof AppState
-
-export interface DispatchType<S extends StateKeys> {
-  type: StateKeys
-  payload?: AppState[S]
+export interface DispatchType {
+  type: keyof StateType
+  payload?: StateType[keyof StateType]
 }
 
-export function appReducer<S extends StateKeys>(
-  state: AppState,
-  action: DispatchType<S>,
-): AppState {
+export function baseReducer(state: StateType, action: DispatchType): StateType {
   const { payload, type } = action
-
   return { ...state, [type]: payload }
 }

@@ -104,7 +104,7 @@ const dataDummy = [
   },
 ]
 
-export default function ProductList() {
+export default function MovieList() {
   const [sortBy, setSortBy] = useState(true)
   console.log('sortBy', sortBy)
   const [dataMovies, setDataMovies] = useState(dataDummy)
@@ -127,56 +127,24 @@ export default function ProductList() {
   }
 
   return (
-    <div className="product">
-      <div className="mx-auto max-w-2xl sm:px-6 sm:py-24 lg:max-w-7xl lg:px-24">
-        <div className="header-page">
-          <div className="title-box">
-            <div className="line" />
-            <h2>Discover Movies</h2>
-          </div>
-
-          <div className="button-box">
-            <button
-              className="px-4 mt-4 bg-red-700 text-white hover:bg-red-950 transition"
-              onClick={() => {
-                setSortBy(!sortBy)
-                handleSortBy('popularity')
-              }}
-            >
-              Popularity
-            </button>
-            <button
-              className="px-4 mt-4 bg-neutral-800 text-white hover:bg-neutral-950 transition"
-              onClick={() => {
-                setSortBy(!sortBy)
-                handleSortBy('date')
-              }}
-            >
-              Release Date
-            </button>
-          </div>
+    <React.Fragment>
+      {dataMovies?.map((items: any) => (
+        <div
+          key={items.id}
+          onClick={() => items.href}
+          className="group movie-list"
+          title={items.name}
+        >
+          <div className="rating bg-neutral-900">{items.rating}</div>
+          <img
+            alt={items.imageAlt}
+            src={items.imageSrc}
+            className="w-full bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8"
+          />
+          <h3 className="mt-2 text-sm text-neutral-50">{items.name}</h3>
+          <p className="mt-1 text-sm text-neutral-500 font-medium">{items.date}</p>
         </div>
-
-        <div className="product-single grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">
-          {dataMovies?.map((items: any) => (
-            <div
-              key={items.id}
-              onClick={() => items.href}
-              className="group product-single"
-              title={items.name}
-            >
-              <div className="rating bg-neutral-900">{items.rating}</div>
-              <img
-                alt={items.imageAlt}
-                src={items.imageSrc}
-                className="w-full bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8"
-              />
-              <h3 className="mt-2 text-sm text-neutral-50">{items.name}</h3>
-              <p className="mt-1 text-sm text-neutral-500 font-medium">{items.date}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+      ))}
+    </React.Fragment>
   )
 }
